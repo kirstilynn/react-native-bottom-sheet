@@ -465,7 +465,9 @@ function BottomSheetModalComponent<T = any>(
   ) : null;
 }
 
-const BottomSheetModal = memo(forwardRef(BottomSheetModalComponent)) as <
+const BottomSheetModal = memo(
+  forwardRef(BottomSheetModalComponent)
+) as unknown as <
   // biome-ignore lint/suspicious/noExplicitAny: Using 'any' allows users to define their own strict types for 'data' property.
   T = any,
 >(
@@ -474,7 +476,7 @@ const BottomSheetModal = memo(forwardRef(BottomSheetModalComponent)) as <
   }
 ) => ReturnType<typeof BottomSheetModalComponent>;
 (
-  BottomSheetModal as React.MemoExoticComponent<
+  BottomSheetModal as unknown as React.MemoExoticComponent<
     typeof BottomSheetModalComponent
   >
 ).displayName = 'BottomSheetModal';

@@ -18,6 +18,7 @@ import type {
   State,
 } from 'react-native-gesture-handler';
 import type {
+  AnimatedRef,
   EasingFunction,
   EasingFunctionFactory,
   ReduceMotion,
@@ -30,7 +31,6 @@ import type {
   ANIMATION_STATUS,
   GESTURE_SOURCE,
   KEYBOARD_STATUS,
-  SCROLLABLE_STATUS,
   SCROLLABLE_TYPE,
 } from './constants';
 
@@ -226,7 +226,7 @@ type ScrollEventHandlerCallbackType<C = never> = (
 ) => void;
 
 export type ScrollEventsHandlersHookType = (
-  ref: React.RefObject<Scrollable>,
+  ref: AnimatedRef<Scrollable>,
   contentOffsetY: SharedValue<number>
 ) => {
   handleOnScroll?: ScrollEventHandlerCallbackType;
